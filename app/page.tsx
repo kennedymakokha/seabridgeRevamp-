@@ -9,7 +9,7 @@ import OurTeam from './components/ourTeam';
 import Header from './components/Header';
 
 export default function HomePage() {
-  const [headerBg, setHeaderBg] = useState(false);
+ 
 
 
   interface ServiceCardProps {
@@ -41,11 +41,6 @@ export default function HomePage() {
       </div>
     )
   }
-  useEffect(() => {
-    const handleScroll = () => setHeaderBg(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <main className="font-sans text-gray-800">

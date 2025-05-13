@@ -8,7 +8,7 @@ import { FiSearch, FiUser } from 'react-icons/fi';
 
 export default function Header() {
     const [headerBg, setHeaderBg] = useState(false);
-    const pathname = usePathname();
+  
 
     useEffect(() => {
         const handleScroll = () => setHeaderBg(window.scrollY > 50);
