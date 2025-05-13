@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function OurTeam() {
@@ -12,19 +13,23 @@ function OurTeam() {
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-left">
                     {/* Team Member 1 */}
                     <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 transition-all">
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src="/team1.jpeg"
                             alt="Director"
                             className="rounded-full w-24 h-24 object-cover mx-auto mb-4"
                         />
-                        <h3 className="text-lg font-semibold text-blue-900 text-center">MS 
-                        Francisca</h3>
+                        <h3 className="text-lg font-semibold text-blue-900 text-center">MS
+                            Francisca</h3>
                         <p className="text-sm text-gray-600 text-center">Managing Director</p>
                     </div>
 
                     {/* Team Member 2 */}
                     <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 transition-all">
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src="/team2.png"
                             alt="Operations Manager"
                             className="rounded-full w-24 h-24 object-cover mx-auto mb-4"
@@ -35,7 +40,9 @@ function OurTeam() {
 
                     {/* Team Member 3 */}
                     <div className="bg-white rounded-lg shadow-md hover:shadow-lg p-6 transition-all">
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src="/team3.png"
                             alt="Logistics Coordinator"
                             className="rounded-full w-24 h-24 object-cover mx-auto mb-4"

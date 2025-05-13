@@ -24,12 +24,7 @@ export default function Header() {
         { href: '/#our-team', label: 'Our Team' },
         { href: '/#contact', label: 'Contact' },
     ];
-    const [hash, setHash] = useState('');
-
-    useEffect(() => {
-        console.log(window.location)
-        setHash(window.location.hash);
-    }, [navLinks]);
+    
 
     return (
         <header className={`fixed w-full flex flex-col z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
@@ -58,7 +53,7 @@ export default function Header() {
                 {/* Navigation */}
                 <nav className="hidden md:flex space-x-6 items-center">
                     {navLinks.map(({ href, label }) => {
-                        const isActive = hash === href || (href.includes('#') && pathname === '/');
+                        
                         return (
                             <Link
                                 key={href}

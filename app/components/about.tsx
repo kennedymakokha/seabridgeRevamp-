@@ -9,7 +9,7 @@ function About() {
                 <div>
                     <h1 className="text-4xl font-bold text-blue-900 mb-4">About Seabridge Forwarders Ltd.</h1>
                     <p className="mb-4">
-                        Incorporated in 1996, Seabridge Forwarders Ltd. has grown to become a major player in Kenya's freight industry.
+                        Incorporated in 1996, Seabridge Forwarders Ltd. has grown to become a major player in  Kenya&apos;s  freight industry.
                         Our head office is located at Signature Mall, Mombasa Road, with branches across key logistic hubs:
                         Kilindini Mombasa, JKIA, ICD Embakasi, and border stations nationwide.
                     </p>
