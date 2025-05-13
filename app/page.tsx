@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import About from './components/about';
@@ -9,9 +8,6 @@ import OurTeam from './components/ourTeam';
 import Header from './components/Header';
 
 export default function HomePage() {
- 
-
-
   interface ServiceCardProps {
     img: string;
     title: string;
