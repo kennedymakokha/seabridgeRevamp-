@@ -3,12 +3,22 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import About from './components/about';
+import Whyus from './components/whyus';
+import OurTeam from './components/ourTeam';
+import Header from './components/Header';
 
 export default function HomePage() {
   const [headerBg, setHeaderBg] = useState(false);
 
 
-  const ServiceCard: React.FC<{ img: string; title: string; desc: string }> = ({ img, title, desc }) => {
+  interface ServiceCardProps {
+    img: string;
+    title: string;
+    desc: string;
+  }
+
+  const ServiceCard = ({ img, title, desc }: ServiceCardProps) => {
     return (
       <div className="relative bg-white rounded shadow text-center overflow-hidden h-80">
         {/* Background Image */}
@@ -39,17 +49,8 @@ export default function HomePage() {
 
   return (
     <main className="font-sans text-gray-800">
-      {/* Header */}
-      <header className={`fixed w-full z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-[#002147]">Seabridge</h1>
-          <nav className="space-x-6">
-            <Link href="#services" className={`font-medium ${headerBg ? 'text-[#002147]' : 'text-white'}`}>Services</Link>
-            <Link href="#about" className={`font-medium ${headerBg ? 'text-[#002147]' : 'text-white'}`}>About</Link>
-            <Link href="#contact" className={`font-medium ${headerBg ? 'text-[#002147]' : 'text-white'}`}>Contact</Link>
-          </nav>
-        </div>
-      </header>
+    
+      <Header />
 
       {/* Hero Section */}
       <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('/slider3.jpg')" }}>
@@ -78,15 +79,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Kenya Section */}
-      <section id="about" className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-[#002147] mb-6">Our Presence in Kenya</h2>
-          <p className="text-lg mb-4">With offices in Nairobi and Mombasa, we provide comprehensive logistics solutions across Kenya, leveraging local expertise and global networks.</p>
-          <Image src="/images/kenya-map.png" alt="Kenya Map" width={600} height={400} className="mx-auto" />
-        </div>
-      </section>
 
+
+      <section id="about" className="py-16 bg-slate-300">
+
+        <About />
+      </section>
+      <section id="why-us" className="py-16 bg-blue-900">
+        <Whyus />
+      </section>
+      <section id="our-team" className="py-16 bg-white">
+        <OurTeam />
+      </section>
       {/* Contact Section */}
       <section id="contact" className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}>
         <div className="bg-black bg-opacity-60 py-16">
