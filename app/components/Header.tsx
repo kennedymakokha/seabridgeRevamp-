@@ -2,13 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FiSearch, FiUser } from 'react-icons/fi';
 
 export default function Header() {
     const [headerBg, setHeaderBg] = useState(false);
-  
 
+    const pathname = usePathname()
     useEffect(() => {
         const handleScroll = () => setHeaderBg(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
@@ -23,7 +24,7 @@ export default function Header() {
         { href: '/#our-team', label: 'Our Team' },
         { href: '/#contact', label: 'Contact' },
     ];
-    
+
 
     return (
         <header className={`fixed w-full flex flex-col z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
@@ -52,12 +53,12 @@ export default function Header() {
                 {/* Navigation */}
                 <nav className="hidden md:flex space-x-6 items-center">
                     {navLinks.map(({ href, label }) => {
-                        
+                        const isActive = pathname === href || (href.includes('#') && pathname === '/');
                         return (
                             <Link
                                 key={href}
                                 href={href}
-                                className={`font-medium transition duration-200 ${window.location.hash === href ? 'underline underline-offset-4 text-blue-400' :
+                                className={`font-medium transition duration-200 ${isActive ? ' font-bold tracking-widest text-blue-400' :
                                     headerBg ? 'text-[#002147]' : 'text-white'
                                     }`}
                             >
