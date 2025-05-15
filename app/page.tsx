@@ -95,7 +95,7 @@ export default function HomePage() {
     },
   ]
   return (
-    <main className="font-sans text-gray-800">
+    <main className="font-sans font-[Causten-Round] text-gray-800">
       {/* Header */}
 
       <Header />
@@ -104,10 +104,10 @@ export default function HomePage() {
         <div ref={sliderRef} className="keen-slider h-full">
           {sliderPac.map((slide, index) => (
             <div key={index} className="keen-slider__slide relative h-full">
-              <Image src={slide.img} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
+              <Image width={1080} height={1000} src={slide.img} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-black opacity-70 flex items-center justify-center text-white text-center px-6">
                 <div>
-                  <TypewriterEffect title text={slide.title} speed={100}/>
+                  <TypewriterEffect title text={slide.title} speed={100} />
                   {/* <h2 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h2> */}
                   <p className="text-lg md:text-xl mb-6">{slide.desc}</p>
                   <a
@@ -153,7 +153,7 @@ export default function HomePage() {
         <OurTeam />
       </section>
       {/* Contact Section */}
-      <section id="contact" className="relative bg-cover bg-center" style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}>
+      <section id="contact" className="relative font-[Causten-Round] bg-cover bg-center" style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}>
         <div className="bg-black bg-opacity-60 py-16">
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 text-white">
             <div>
@@ -177,7 +177,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#002147] text-white py-12">
+      <footer className="bg-[#002147] font-[Causten-Round] text-white py-12">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
           <div>
             <h2 className="text-xl font-bold mb-3">Seabridge Logistics</h2>
