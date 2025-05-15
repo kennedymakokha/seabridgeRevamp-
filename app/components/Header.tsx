@@ -29,15 +29,15 @@ export default function Header() {
     return (
         <header className={`fixed w-full font-[Causten-Round] px-10  border-b border-slate-500 pb-2 flex flex-col z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
 
-            <div className="flex flex-row justify-between">
-                <div className="flex items-center justify-center  gap-3">
-                    <Image src="/logo.png" alt="Seabridge Logo" width={50} height={50} />
+            <div className="flex flex-row justify-between w-full">
+                <div className="flex items-center md:w-1/3 w-full justify-center  gap-3">
+                    <Image src="/logo.png" alt="Seabridge Logo" width={100} height={100} />
                     <h1 className={`text-xl md:text-2xl font-[Causten-Round] font-bold ${headerBg ? 'text-blue-900' : 'text-white'}`}>
                         Seabridge Forwarders Ltd
                     </h1>
                 </div>
 
-                <div className="max-w-7xl  w-full mx-auto flex flex-col items-end">
+                <div className="max-w-7xl  w-2/3 mx-auto flex flex-col items-end">
                     <div className="hidden md:flex items-center self-end float-right my-2 space-x-4">
                         <Link
                             href="/track-trace"
@@ -59,9 +59,7 @@ export default function Header() {
                                 <Link
                                     key={href}
                                     href={href}
-                                    className={`font-medium px-2 tracking-widest font-bold hover:bg-[#002147] hover:border-none   rounded-md  py-1 transition duration-200 ${isActive ? ' font-bold tracking-widest text-blue-400' :
-                                        headerBg ? 'text-[#002147]' : 'text-white'
-                                        }`}
+                                    className={`font-medium px-2 tracking-widest text-xl hover:bg-[#002147] hover:border-none   rounded-md  py-1 transition duration-200   ${headerBg ? 'text-[#002147]' : 'text-white'}`}
                                 >
                                     {label}
                                 </Link>
