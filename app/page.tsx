@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
@@ -104,7 +104,7 @@ export default function HomePage() {
         <div ref={sliderRef} className="keen-slider h-full">
           {sliderPac.map((slide, index) => (
             <div key={index} className="keen-slider__slide relative h-full">
-              <img src={slide.img} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
+              <Image src={slide.img} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-black opacity-70 flex items-center justify-center text-white text-center px-6">
                 <div>
                   <TypewriterEffect title text={slide.title} speed={100}/>
