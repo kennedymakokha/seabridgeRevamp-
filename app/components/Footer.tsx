@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
         {/* Company Info */}
         <div>
-          <h2 className="text-xl font-bold mb-3">Seabridge Logistics</h2>
+          <h2 className="text-xl font-bold mb-3">Seabridge Forwarders Ltd</h2>
           <p className="text-sm text-[#cbd5e1]">
             Seamlessly moving your cargo across continents with speed and precision.
           </p>
@@ -45,7 +45,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-[#334155] mt-10 pt-6 text-center text-sm text-[#94a3b8]">
-        &copy; {new Date().getFullYear()} Seabridge Logistics. All rights reserved.
+        &copy; {new Date().getFullYear()}At Seabridge Forwarders Ltd. All rights reserved.
       </div>
     </footer>
   );

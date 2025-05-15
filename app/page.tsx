@@ -1,13 +1,53 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+import 'keen-slider/keen-slider.min.css';
+import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
-import Link from 'next/link';
 import About from './components/about';
 import Whyus from './components/whyus';
 import OurTeam from './components/ourTeam';
 import Header from './components/Header';
+import TypewriterEffect from './components/typeWritter';
 
 export default function HomePage() {
+  const timer = useRef<NodeJS.Timeout | null>(null);
+
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    renderMode: 'performance',
+    drag: true,
+  });
+
+  // Autoplay logic
+  useEffect(() => {
+    if (!slider.current) return;
+
+    const autoplay = () => {
+      timer.current = setInterval(() => {
+        slider.current?.next();
+      }, 6000); // 3-second interval
+    };
+
+    autoplay();
+
+    // Pause autoplay on hover (optional)
+    // const sliderNode = sliderRef.current;
+    // const stop = () => timer.current && clearInterval(timer.current);
+
+    // if (sliderNode) {
+    //   sliderNode.addEventListener('mouseover', stop);
+    //   sliderNode.addEventListener('mouseout', autoplay);
+    // }
+
+    // return () => {
+    //   stop();
+    //   sliderNode?.removeEventListener('mouseover', stop);
+    //   sliderNode?.removeEventListener('mouseout', autoplay);
+    // };
+  }, [slider]);
+
+
   interface ServiceCardProps {
     img: string;
     title: string;
@@ -21,8 +61,8 @@ export default function HomePage() {
         <Image
           src={img}
           alt="Ocean Freight"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="absolute inset-0 z-0"
         />
 
@@ -35,24 +75,54 @@ export default function HomePage() {
           <p>{desc}</p>
         </div>
       </div>
+
     )
   }
-
+  const sliderPac = [
+    {
+      img: '/slider3.jpg',
+      title: "Global Freight Solutions",
+      desc: "Efficient. Reliable. Trusted Logistics Partner.",
+    },
+    {
+      title: "Air Freight", img: "/air.jpg", desc: 'Fast and reliable air cargo solutions tailored to your needs.'
+    },
+    {
+      title: "Ocean Freight", img: "/sea.jpg", desc: 'Cost-effective ocean freight services for global shipping.'
+    },
+    {
+      title: "Road Freight", img: "/slider3.jpg", desc: 'Efficient and secure ground transportation across Kenya.'
+    },
+  ]
   return (
     <main className="font-sans text-gray-800">
-    
-      <Header />
+      {/* Header */}
 
-      {/* Hero Section */}
-      <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('/slider3.jpg')" }}>
-        <div className="absolute inset-0 bg-black opacity-80 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-4xl md:text-6xl font-bold">Reliable Freight Solutions in Kenya</h1>
-            <p className="mt-4 text-lg">Connecting businesses with seamless logistics services across Kenya and beyond.</p>
-            <Link href="/contact" className="mt-6 inline-block bg-[#00AEEF] text-white px-6 py-3 rounded hover:bg-blue-700">Request a Quote</Link>
-          </div>
+      <Header />
+      {/* Hero Slider */}
+      <section className="h-screen overflow-hidden">
+        <div ref={sliderRef} className="keen-slider h-full">
+          {sliderPac.map((slide, index) => (
+            <div key={index} className="keen-slider__slide relative h-full">
+              <img src={slide.img} alt={`Slide ${index + 1}`} className="object-cover w-full h-full" />
+              <div className="absolute inset-0 bg-black opacity-70 flex items-center justify-center text-white text-center px-6">
+                <div>
+                  <TypewriterEffect title text={slide.title} speed={100}/>
+                  {/* <h2 className="text-4xl md:text-6xl font-bold mb-4">{slide.title}</h2> */}
+                  <p className="text-lg md:text-xl mb-6">{slide.desc}</p>
+                  <a
+                    href="#contact"
+                    className="bg-yellow-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-lg font-semibold"
+                  >
+                    Request a Quote
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+
 
       {/* Services Section */}
       <section id="services" className="py-16 bg-gray-100">
@@ -61,10 +131,10 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard title="Air Freight" img="/air.jpg" desc='Fast and reliable air cargo solutions tailored to your needs.' />
             <ServiceCard title="Ocean Freight" img="/sea.jpg" desc='Cost-effective ocean freight services for global shipping.' />
-            <ServiceCard title="Road Freight" img="" desc='Efficient and secure ground transportation across Kenya.' />
+            <ServiceCard title="Road Freight" img="/slider3.jpg" desc='Efficient and secure ground transportation across Kenya.' />
             <ServiceCard title="Customs Clearance" img="/duty.webp" desc='Hassle-free border clearance with local expertise.' />
             <ServiceCard title="Warehousing" img="/sea.jpg" desc='Secure storage with real-time inventory management.' />
-            <ServiceCard title="Project Cargo" img="" desc='Handling oversized, high-value, or specialized logistics projects.' />
+            <ServiceCard title="Project Cargo" img="/sea.jpg" desc='Handling oversized, high-value, or specialized logistics projects.' />
 
           </div>
         </div>
@@ -116,7 +186,7 @@ export default function HomePage() {
           {/* Additional footer sections here */}
         </div>
         <div className="border-t border-[#334155] mt-10 pt-6 text-center text-sm text-[#94a3b8]">
-          &copy; {new Date().getFullYear()} Seabridge Logistics. All rights reserved.
+          &copy; {new Date().getFullYear()}At Seabridge Forwarders Ltd. All rights reserved.
         </div>
       </footer>
     </main>

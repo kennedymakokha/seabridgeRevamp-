@@ -27,7 +27,7 @@ export default function Header() {
 
 
     return (
-        <header className={`fixed w-full flex flex-col z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+        <header className={`fixed w-full  border-b border-slate-500 pb-2 flex flex-col z-50 top-0 transition-colors duration-300 ${headerBg ? 'bg-white shadow-md' : 'bg-transparent'}`}>
             <div className="flex items-center self-end px-10 float-right my-2 space-x-4">
                 <Link
                     href="/track-trace"
@@ -43,22 +43,22 @@ export default function Header() {
             </div>
             <div className="max-w-7xl  w-full mx-auto px-4 flex justify-between items-center">
                 {/* Logo and name */}
-                <div className="flex items-start gap-3">
+                <div className="flex items-start  gap-3">
                     <Image src="/logo.png" alt="Seabridge Logo" width={50} height={50} />
-                    <h1 className={`text-xl md:text-2xl font-bold ${headerBg ? 'text-blue-900' : 'text-white'}`}>
+                    <h1 className={`text-xl md:text-2xl  font-bold ${headerBg ? 'text-blue-900' : 'text-white'}`}>
                         Seabridge Forwarders Ltd
                     </h1>
                 </div>
 
                 {/* Navigation */}
-                <nav className="hidden md:flex space-x-6 items-center">
+                <nav className="hidden md:flex  space-x-6 items-center">
                     {navLinks.map(({ href, label }) => {
                         const isActive = pathname === href || (href.includes('#') && pathname === '/');
                         return (
                             <Link
                                 key={href}
                                 href={href}
-                                className={`font-medium transition duration-200 ${isActive ? ' font-bold tracking-widest text-blue-400' :
+                                className={`font-medium  hover:bg-[#002147] hover:border-none px-2  rounded-md  py-1 transition duration-200 ${isActive ? ' font-bold tracking-widest text-blue-400' :
                                     headerBg ? 'text-[#002147]' : 'text-white'
                                     }`}
                             >

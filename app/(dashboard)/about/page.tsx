@@ -19,9 +19,9 @@ export default function AboutPage() {
 
                 {/* Page Header */}
                 <section className="text-center space-y-4">
-                    <h1 className="text-4xl font-bold">About Seabridge Logistics</h1>
+                    <h1 className="text-4xl font-bold">AboutAt Seabridge Forwarders Ltd</h1>
                     <p className="text-[#4B5563] max-w-3xl mx-auto">
-                        Seabridge Logistics is a leading freight forwarding company based in Kenya, offering reliable,
+                       At Seabridge Forwarders Ltd is a leading freight forwarding company based in Kenya, offering reliable,
                         innovative, and customer-driven logistics solutions for global cargo movement.
                     </p>
                 </section>
