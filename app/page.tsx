@@ -153,7 +153,7 @@ export default function HomePage() {
         <OurTeam />
       </section>
       {/* Contact Section */}
-      <section id="contact" className="relative font-[Causten-Round] bg-cover bg-center" style={{ backgroundImage: "url('/images/contact-bg.jpg')" }}>
+      <section id="contact" className="relative font-[Causten-Round] bg-cover bg-center" style={{ backgroundImage: "url('/slider3.jpg')" }}>
         <div className="bg-black bg-opacity-60 py-16">
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 text-white">
             <div>
