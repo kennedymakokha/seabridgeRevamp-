@@ -34,7 +34,7 @@ export default function ContactPage() {
           <div className="space-y-4 text-[#002147]">
             <div>
               <h4 className="font-semibold">📍 Address</h4>
-              <p>Seabridge Logistics Ltd<br />Mombasa Road, Nairobi, Kenya</p>
+              <p>Seabridge Forwarders Ltd<br />Mombasa Road, Nairobi, Kenya</p>
             </div>
             <div>
               <h4 className="font-semibold">📞 Phone</h4>

@@ -180,7 +180,7 @@ export default function HomePage() {
       <footer className="bg-[#002147] font-[Causten-Round] text-white py-12">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
           <div>
-            <h2 className="text-xl font-bold mb-3">Seabridge Logistics</h2>
+            <h2 className="text-xl font-bold mb-3">Seabridge Forwarders Ltd</h2>
             <p className="text-sm text-[#cbd5e1]">Seamlessly moving your cargo across continents with speed and precision.</p>
           </div>
           {/* Additional footer sections here */}
