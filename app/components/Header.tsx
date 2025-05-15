@@ -2,14 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { FiSearch, FiUser } from 'react-icons/fi';
 
 export default function Header() {
     const [headerBg, setHeaderBg] = useState(false);
 
-    const pathname = usePathname()
     useEffect(() => {
         const handleScroll = () => setHeaderBg(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
@@ -54,6 +52,7 @@ export default function Header() {
                     {/* Navigation */}
                     <nav className="hidden md:flex  space-x-6 items-center">
                         {navLinks.map(({ href, label }) => {
+                        
                             return (
                                 <Link
                                     key={href}
