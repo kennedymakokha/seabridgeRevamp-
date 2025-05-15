@@ -54,7 +54,6 @@ export default function Header() {
                     {/* Navigation */}
                     <nav className="hidden md:flex  space-x-6 items-center">
                         {navLinks.map(({ href, label }) => {
-                            const isActive = pathname === href || (href.includes('#') && pathname === '/');
                             return (
                                 <Link
                                     key={href}
