@@ -185,7 +185,7 @@ export default function HomePage() {
           </div>
           {/* Additional footer sections here */}
         </div>
-        <div className="border-t border-[#334155] mt-10 pt-6 text-center text-sm text-[#94a3b8]">
+        <div className=" border-[#334155] border-t mt-10 pt-6 text-center text-sm text-[#94a3b8]">
           &copy; {new Date().getFullYear()}At Seabridge Forwarders Ltd. All rights reserved.
         </div>
       </footer>
