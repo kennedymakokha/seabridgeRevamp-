@@ -2,7 +2,7 @@ import React from 'react'
 
 function Whyus() {
     return (
-        <section className="bg-blue-900 py-16 px-6 font-[Causten-Round]">
+        <section className="bg-blue-900 py-16 px-6 ">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 uppercase">Why Choose <span className="text-yellow-500">Seabridge</span></h2>
                 <p className="text-lg text-slate-200 mb-12">What Makes Us Special</p>
@@ -44,7 +44,7 @@ function Whyus() {
                     </div>
                 </div>
             </div>
-            <div className="bg-blue-900 py-16 px-6 font-[Causten-Round]">
+            <div className="bg-blue-900 py-16 px-6 ">
                 <div className="max-w-7xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-10">Additionally</h2>
                     <div className="grid md:grid-cols-3 gap-10 text-left">

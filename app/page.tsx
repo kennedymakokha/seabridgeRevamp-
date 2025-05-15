@@ -9,6 +9,8 @@ import Whyus from './components/whyus';
 import OurTeam from './components/ourTeam';
 import Header from './components/Header';
 import TypewriterEffect from './components/typeWritter';
+import { sliderPac } from './arrays';
+import ServiceCard from './components/serviceCard';
 
 export default function HomePage() {
   const timer = useRef<NodeJS.Timeout | null>(null);
@@ -48,54 +50,9 @@ export default function HomePage() {
   }, [slider]);
 
 
-  interface ServiceCardProps {
-    img: string;
-    title: string;
-    desc: string;
-  }
-
-  const ServiceCard = ({ img, title, desc }: ServiceCardProps) => {
-    return (
-      <div className="relative bg-white rounded shadow text-center overflow-hidden h-80">
-        {/* Background Image */}
-        <Image
-          src={img}
-          alt="Ocean Freight"
-          fill
-          style={{ objectFit: 'cover' }}
-          className="absolute inset-0 z-0"
-        />
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
-
-        {/* Content */}
-        <div className="relative z-20 p-6 text-white flex flex-col items-center justify-center h-full">
-          <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-          <p>{desc}</p>
-        </div>
-      </div>
-
-    )
-  }
-  const sliderPac = [
-    {
-      img: '/slider3.jpg',
-      title: "Global Freight Solutions",
-      desc: "Efficient. Reliable. Trusted Logistics Partner.",
-    },
-    {
-      title: "Air Freight", img: "/air.jpg", desc: 'Fast and reliable air cargo solutions tailored to your needs.'
-    },
-    {
-      title: "Ocean Freight", img: "/sea.jpg", desc: 'Cost-effective ocean freight services for global shipping.'
-    },
-    {
-      title: "Road Freight", img: "/slider3.jpg", desc: 'Efficient and secure ground transportation across Kenya.'
-    },
-  ]
+ 
   return (
-    <main className="font-sans font-[Causten-Round] text-gray-800">
+    <main className="font-sans  text-gray-800">
       {/* Header */}
 
       <Header />
@@ -153,7 +110,7 @@ export default function HomePage() {
         <OurTeam />
       </section>
       {/* Contact Section */}
-      <section id="contact" className="relative font-[Causten-Round] bg-cover bg-center" style={{ backgroundImage: "url('/slider3.jpg')" }}>
+      <section id="contact" className="relative  bg-cover bg-center" style={{ backgroundImage: "url('/slider3.jpg')" }}>
         <div className="bg-black bg-opacity-60 py-16">
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 text-white">
             <div>
@@ -177,7 +134,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#002147] font-[Causten-Round] text-white py-12">
+      <footer className="bg-[#002147]  text-white py-12">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
           <div>
             <h2 className="text-xl font-bold mb-3">Seabridge Forwarders Ltd</h2>

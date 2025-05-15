@@ -6,7 +6,7 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                causten: ['var(--font-causten)', 'sans-serif'],
+                montserrat: ['var(--font-montserrat)'],
             },
         },
     },

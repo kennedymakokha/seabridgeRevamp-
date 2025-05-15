@@ -2,21 +2,18 @@
 import "./globals.css";
 import localFont from 'next/font/local';
 
-const caustenRound = localFont({
+
+const montserrat = localFont({
   src: [
     {
-      path: './fonts/Causten-Regular.otf',
+      path: './../public/fonts/Montserrat-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
-    {
-      path: './fonts/Causten-Bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
+    
   ],
-  variable: '--font-causten',
-  display: 'swap',
+  variable: '--font-montserrat',
+ 
 });
 
 export const metadata = {
@@ -29,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={caustenRound.variable}>
-      <body className="font-causten">{children}</body>
+    <html lang="en" className={montserrat.variable}>
+      <body className="font-montserrat">{children}</body>
     </html>
   );
 }

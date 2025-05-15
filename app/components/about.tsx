@@ -3,7 +3,7 @@ import React from 'react'
 
 function About() {
     return (
-        <main className="px-6 py-12 max-w-7xl mx-auto font-[Causten-Round]  text-gray-800 space-y-16">
+        <main className="px-6 py-12 max-w-7xl mx-auto  text-gray-800 space-y-16">
             {/* Top Section */}
             <section className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
